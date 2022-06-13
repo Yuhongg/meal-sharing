@@ -1,18 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import TestComponent from "./components/TestComponent/TestComponent";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HomePage } from "./components/HomePage";
+import { AddMeal } from "./components/AddMeal";
+import { NavBar } from "./components/NavBar";
+import { ContactUs } from "./components/ContactUs";
+import { Menu } from "./components/Menu";
 
 function App() {
   return (
     <Router>
       <Route exact path="/">
-        <p>test</p>
+        <br />
+        <HomePage />
       </Route>
-      <Route exact path="/lol">
-        <p>lol</p>
+      <NavBar />
+      <Route exact path="/meals">
+        <br />
+        <AddMeal />
       </Route>
-      <Route exact path="/test-component">
-        <TestComponent></TestComponent>
+      <Route path="/menu">
+        <br />
+        <Menu />
+      </Route>
+      <Route path="/contactus">
+        <br />
+        <ContactUs />
       </Route>
     </Router>
   );
